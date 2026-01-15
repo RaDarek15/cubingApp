@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        #scramble {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Cube Scramble Generator</h1>
+
+<label for="cube-select">Choose cube type:</label>
+<select id="cube-select">
+    <option value="">--Select--</option>
+    <option value="3x3">3x3</option>
+    <option value="4x4">4x4</option>
+</select>
+<button onclick="selection()">next</button>
+<div id="scramble"></div>
+
+<script src="scramble/generate3x3.js"></script>
+<script src="index.js"></script> <!-- always last -->
+</body>
+</html>
