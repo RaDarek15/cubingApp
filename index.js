@@ -22,18 +22,7 @@ function nextScramble() {
         const cube = createSolvedCube(); // reset
         scramble.forEach(move => applyMove(cube, move));
         displayCube(cube);
-    }
-    else if(cubeSelect.value === "4x4"){
-        const scramble = generate4x4();
-        scrambleDiv.textContent = scramble.join(' ');
-        cubeArraysDiv.innerHTML = '';
-    }
-    else if(cubeSelect.value === "5x5"){
-        const scramble = generate5x5();
-        scrambleDiv.textContent = scramble.join(' ');
-        cubeArraysDiv.innerHTML = '';
-    }
-    else {
+    } else {
         scrambleDiv.textContent = '';
         cubeArraysDiv.innerHTML = '';
     }
