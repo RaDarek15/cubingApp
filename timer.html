@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Timer</title>
+    <title>Cube scramble generator</title>
     <style>
-        body {
-            font-family: sans-serif;
-            padding: 20px;
-        }
-        #scramble {
-            margin-top: 20px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
+        body { font-family: sans-serif; padding: 20px; }
+        #scramble { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+        #cube-arrays div { margin-bottom: 15px; font-family: monospace; }
+        strong { text-decoration: underline; }
+        button { margin-left: 10px; }
     </style>
 </head>
 <body>
-<h1>Cube Scramble Generator</h1>
+<h1>3x3 Cube Viewer</h1>
 
 <label for="cube-select">Choose cube type:</label>
 <select id="cube-select">
@@ -25,12 +21,15 @@
     <option value="4x4">4x4</option>
     <option value="5x5">5x5</option>
 </select>
-<button onclick="selection()">next</button>
-<div id="scramble"></div>
+<button id="next-btn">Next</button>
 
+<div id="scramble"></div>
+<div id="cube-arrays"></div>
+
+<!-- Scripts -->
 <script src="scramble/generate3x3.js"></script>
 <script src="scramble/generate4x4.js"></script>
 <script src="scramble/generate5x5.js"></script>
-<script src="index.js"></script> <!-- always last -->
+<script src="index.js"></script>
 </body>
 </html>
