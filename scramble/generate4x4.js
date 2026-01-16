@@ -1,6 +1,6 @@
 function generate4x4() {
     const moves = ["U", "D", "L", "R", "F", "B"];
-    const modifiers = ["", "'", "2","w","w2"];
+    const modifiers = ["", "'", "2","w","w2","w'"];
     const axisMap = { U: "UD", D: "UD", L: "LR", R: "LR", F: "FB", B: "FB" };
 
     let zakresRuchowy = Math.floor((Math.random() * 60) + 40);
