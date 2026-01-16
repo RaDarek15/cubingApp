@@ -5,14 +5,28 @@ const cubeArraysDiv = document.getElementById("cube-arrays");
 
 function displayCube(cube) {
     cubeArraysDiv.innerHTML = '';
-    for(const face in cube){
+
+    for (const face in cube) {
         const faceDiv = document.createElement('div');
-        let text = `<strong>${face}:</strong><br>`;
-        cube[face].forEach(row => text += row.join(' ') + '<br>');
-        faceDiv.innerHTML = text;
+        faceDiv.className = `face face-${face}`;
+
+        const grid = document.createElement('div');
+        grid.className = 'face-grid';
+
+        cube[face].forEach(row => {
+            row.forEach(cell => {
+                const span = document.createElement('span');
+                span.className = `cube-${cell}`;
+                grid.appendChild(span);
+            });
+        });
+
+        faceDiv.appendChild(grid);
         cubeArraysDiv.appendChild(faceDiv);
     }
 }
+
+
 
 function nextScramble() {
     if(cubeSelect.value === "3x3"){
@@ -22,7 +36,18 @@ function nextScramble() {
         const cube = createSolvedCube(); // reset
         scramble.forEach(move => applyMove(cube, move));
         displayCube(cube);
-    } else {
+    }
+    else if (cubeSelect.value === "4x4"){
+        const scramble = generate4x4();
+        scrambleDiv.textContent = scramble.join(' ');
+        cubeArraysDiv.innerHTML = '';
+    }
+    else if (cubeSelect.value === "5x5"){
+        const scramble = generate5x5();
+        scrambleDiv.textContent = scramble.join(' ');
+        cubeArraysDiv.innerHTML = '';
+    }
+    else {
         scrambleDiv.textContent = '';
         cubeArraysDiv.innerHTML = '';
     }
